@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://dpm2gbk18gg1c"]
+[gd_scene load_steps=18 format=3 uid="uid://dpm2gbk18gg1c"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_pkhuc"]
 [ext_resource type="PackedScene" uid="uid://bxdqlt8fuwtc3" path="res://player.tscn" id="2_3vjp2"]
 [ext_resource type="Texture2D" uid="uid://bjregdak4e6tt" path="res://FloatingIslands_Assets/AssetSheet_Green.png" id="2_4j1kb"]
 [ext_resource type="Texture2D" uid="uid://c81fjvaipwd2x" path="res://FloatingIslands_Assets/AssetSheet_Pink.png" id="3_5562y"]
@@ -1055,9 +1056,53 @@ sources/2 = SubResource("TileSetAtlasSource_qavlj")
 sources/3 = SubResource("TileSetAtlasSource_54638")
 sources/4 = SubResource("TileSetAtlasSource_sqh7h")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fa3oj"]
+
+[sub_resource type="Animation" id="Animation_5j6rd"]
+resource_name = "fade"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0117647, 0.0117647, 0.0117647, 1), Color(0.00392157, 0.00392157, 0.00392157, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_i16sp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x4wcd"]
+_data = {
+"RESET": SubResource("Animation_i16sp"),
+"fade": SubResource("Animation_5j6rd")
+}
+
 [node name="Main" type="Node"]
+script = ExtResource("1_pkhuc")
 
 [node name="Player" parent="." instance=ExtResource("2_3vjp2")]
+
+[node name="AnimatedSprite2D" parent="Player" index="0"]
+frame = 0
+frame_progress = 0.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("7_2xibe")
@@ -1125,3 +1170,30 @@ position = Vector2(-47, -13400)
 rotation = 3.14159
 scale = Vector2(10, 10)
 texture = ExtResource("6_4781e")
+
+[node name="VoidKillZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VoidKillZone"]
+position = Vector2(0, -6500)
+scale = Vector2(250, 850)
+shape = SubResource("RectangleShape2D_fa3oj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Fade")
+libraries = {
+"": SubResource("AnimationLibrary_x4wcd")
+}
+
+[node name="Fade" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+top_level = true
+offset_left = -2779.0
+offset_top = -1253.0
+offset_right = 2811.0
+offset_bottom = 1662.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="area_exited" from="VoidKillZone" to="." method="_on_void_kill_zone_area_exited"]
+[connection signal="body_exited" from="VoidKillZone" to="." method="_on_void_kill_zone_body_exited"]
+
+[editable path="Player"]
