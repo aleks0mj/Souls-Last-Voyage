@@ -5,6 +5,7 @@ var respawn_position = Vector2(0,0)  # Set this to your desired respawn location
 
 func fade_screen_and_respawn():
 	$AnimationPlayer.play("fade")
+	await get_tree().create_timer(1.5).timeout
 	$Player.position = respawn_position
 	$Player.set_physics_process(true)
 	$Player.get_node("AnimatedSprite2D").play("idle")

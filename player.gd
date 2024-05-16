@@ -17,6 +17,9 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
+		# Apply air resistance when in the air
+		velocity.x = move_toward(velocity.x, 0, AIR_RESISTANCE * delta)
+
 		# Play the jump animation if moving upwards and it's not already playing
 		if velocity.y < 0 and $AnimatedSprite2D.animation != "jump":
 			$AnimatedSprite2D.animation = "jump"
@@ -29,8 +32,13 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play()
 
 	# Get the input direction and handle the movement/deceleration
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
+	var direction = 0
+	if Input.is_action_pressed("move_left"):
+		direction -= 1
+	if Input.is_action_pressed("move_right"):
+		direction += 1
+
+	if direction != 0:
 		# Move the player horizontally based on input direction
 		velocity.x = direction * SPEED
 
