@@ -13,10 +13,17 @@ const AIR_RESISTANCE = 2000  # Air friction
 # Get the gravity from the project settings to be synced with RigidBody nodes
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+# Variable to track if the player is in heaven mode
+var heaven_mode = false
+
 # Track the player's jump start position
 var jump_start_y = null
 
 func _physics_process(delta):
+	# If in heaven mode, skip normal physics processing
+	if heaven_mode:
+		return
+
 	# Add gravity to the player's vertical velocity
 	if not is_on_floor():
 		velocity.y += gravity * delta

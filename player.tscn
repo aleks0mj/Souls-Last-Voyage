@@ -1,7 +1,10 @@
-[gd_scene load_steps=35 format=3 uid="uid://bxdqlt8fuwtc3"]
+[gd_scene load_steps=50 format=3 uid="uid://mu4a4guwrqun"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_75nfh"]
-[ext_resource type="Texture2D" uid="uid://bctuq0vct75pg" path="res://AnimationSheet_Character.png" id="2_h2523"]
+[ext_resource type="Texture2D" uid="uid://5pu82watfc13" path="res://AnimationSheet_Character.png" id="2_h2523"]
+[ext_resource type="Texture2D" uid="uid://cpj4foo85gce6" path="res://AnimationSheet_Character_custom.png" id="3_cw1hc"]
+[ext_resource type="FontFile" uid="uid://cxk0kpplhqvmb" path="res://sweety_rasty/Sweety Rasty.otf" id="4_ffvfd"]
+[ext_resource type="Texture2D" uid="uid://dceteu44snlv0" path="res://BG_DesertMountains/cloud4.png" id="4_vhfxy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ftqby"]
 atlas = ExtResource("2_h2523")
@@ -42,6 +45,38 @@ region = Rect2(160, 160, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0nhaa"]
 atlas = ExtResource("2_h2523")
 region = Rect2(128, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsgg4"]
+atlas = ExtResource("2_h2523")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4tdm"]
+atlas = ExtResource("2_h2523")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3sq3"]
+atlas = ExtResource("3_cw1hc")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucq0w"]
+atlas = ExtResource("2_h2523")
+region = Rect2(128, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6yso"]
+atlas = ExtResource("2_h2523")
+region = Rect2(160, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ni2co"]
+atlas = ExtResource("2_h2523")
+region = Rect2(192, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl8xt"]
+atlas = ExtResource("3_cw1hc")
+region = Rect2(192, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn713"]
+atlas = ExtResource("3_cw1hc")
+region = Rect2(224, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_chfra"]
 atlas = ExtResource("2_h2523")
@@ -167,6 +202,119 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_fsgg4")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_q4tdm")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_u3sq3")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_ucq0w")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_r6yso")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ni2co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6yso")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ni2co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6yso")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ni2co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6yso")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ni2co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6yso")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ni2co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6yso")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ni2co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6yso")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ni2co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6yso")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ni2co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6yso")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ni2co")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_r6yso")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_ni2co")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_r6yso")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_ni2co")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_r6yso")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_ni2co")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_r6yso")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_r6yso")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_ni2co")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_ni2co")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_r6yso")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_ni2co")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_jl8xt")
+}, {
+"duration": 50.0,
+"texture": SubResource("AtlasTexture_pn713")
+}],
+"loop": true,
+"name": &"float",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_chfra")
 }, {
 "duration": 1.0,
@@ -250,6 +398,132 @@ animations = [{
 radius = 26.0
 height = 84.0
 
+[sub_resource type="Animation" id="Animation_3b47g"]
+resource_name = "CloudFade"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FloatCloud:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5.5, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l44cf"]
+_data = {
+"CloudFade": SubResource("Animation_3b47g")
+}
+
+[sub_resource type="Animation" id="Animation_nyf41"]
+resource_name = "Credits"
+length = 55.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.5, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Label2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(7, 10.5, 13.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Label3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(13.9, 17, 20.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Label4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(20.1, 22.5, 25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Label5:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(25, 28, 31),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Label6:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(31, 34, 37),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Label7:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(37, 41.5, 46),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Label8:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(46, 50.5, 54.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwo2o"]
+_data = {
+"Credits": SubResource("Animation_nyf41")
+}
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_75nfh")
 
@@ -257,10 +531,143 @@ script = ExtResource("1_75nfh")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_v42e2")
-animation = &"death"
+animation = &"float"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_npqum")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="FloatCloud" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+position = Vector2(5.22458, 63)
+scale = Vector2(-0.878566, -1)
+texture = ExtResource("4_vhfxy")
+
+[node name="AnimationPlayer0" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l44cf")
+}
+
+[node name="AnimationPlayer1" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Label1")
+libraries = {
+"": SubResource("AnimationLibrary_rwo2o")
+}
+
+[node name="Label1" type="Label" parent="."]
+modulate = Color(0, 0, 0, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -539.0
+offset_top = -225.0
+offset_right = 539.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_ffvfd")
+theme_override_font_sizes/font_size = 45
+text = "Game created by Aleksander Johnson
+for the 2024 Swiss gymnasial 
+Computer Science exam"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color(0, 0, 0, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -421.5
+offset_top = -200.0
+offset_right = 421.5
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_ffvfd")
+theme_override_font_sizes/font_size = 45
+text = "Character sprites and island tilemaps
+created by Penzilla"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+modulate = Color(0, 0, 0, 0)
+offset_left = -616.5
+offset_top = -225.0
+offset_right = 616.5
+offset_bottom = -45.0
+theme_override_fonts/font = ExtResource("4_ffvfd")
+theme_override_font_sizes/font_size = 45
+text = "Background music \"Fireflies\" 
+created by 
+Ambient Boy"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+modulate = Color(0, 0, 0, 0)
+offset_left = -534.0
+offset_top = -200.0
+offset_right = 534.0
+offset_bottom = -81.0
+theme_override_fonts/font = ExtResource("4_ffvfd")
+theme_override_font_sizes/font_size = 45
+text = "Clouds and world borders
+created by Szadi art"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+modulate = Color(0, 0, 0, 0)
+offset_left = -413.5
+offset_top = -225.0
+offset_right = 413.5
+offset_bottom = -38.0
+theme_override_fonts/font = ExtResource("4_ffvfd")
+theme_override_font_sizes/font_size = 45
+text = "Space backbround created with
+Pixel Space Background Generator
+by Deep-Fold"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="."]
+modulate = Color(0, 0, 0, 0)
+offset_left = -234.0
+offset_top = -200.0
+offset_right = 234.0
+offset_bottom = -81.0
+theme_override_fonts/font = ExtResource("4_ffvfd")
+theme_override_font_sizes/font_size = 45
+text = "Ending music \"Hope\"
+by Simon Folwar"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="."]
+modulate = Color(0, 0, 0, 0)
+offset_left = -317.0
+offset_top = -200.0
+offset_right = 317.0
+offset_bottom = -74.0
+theme_override_fonts/font = ExtResource("4_ffvfd")
+theme_override_font_sizes/font_size = 45
+text = "In loving memory of Minou the cat
+31.04.2016 - 23.04.2024"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="."]
+modulate = Color(0, 0, 0, 0)
+offset_left = -629.0
+offset_top = -240.0
+offset_right = 629.0
+offset_bottom = -39.0
+theme_override_fonts/font = ExtResource("4_ffvfd")
+theme_override_font_sizes/font_size = 45
+text = "“Don't cry because it's over.
+Smile because it happened”
+-Dr Seuss"
+horizontal_alignment = 1
