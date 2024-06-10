@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://mu4a4guwrqun"]
+[gd_scene load_steps=52 format=3 uid="uid://mu4a4guwrqun"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_75nfh"]
 [ext_resource type="Texture2D" uid="uid://5pu82watfc13" path="res://AnimationSheet_Character.png" id="2_h2523"]
@@ -109,6 +109,14 @@ region = Rect2(160, 160, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fe17f"]
 atlas = ExtResource("2_h2523")
 region = Rect2(192, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3igg"]
+atlas = ExtResource("2_h2523")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqr8p"]
+atlas = ExtResource("2_h2523")
+region = Rect2(64, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qspee"]
 atlas = ExtResource("2_h2523")
@@ -349,6 +357,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_c3igg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqr8p")
+}],
+"loop": true,
+"name": &"prepare",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qspee")
 }, {
 "duration": 1.0,
@@ -531,7 +550,8 @@ script = ExtResource("1_75nfh")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_v42e2")
-animation = &"float"
+animation = &"prepare"
+frame_progress = 0.577593
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

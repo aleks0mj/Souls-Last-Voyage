@@ -1,12 +1,12 @@
 extends Node
 
 # Respawn location
-var respawn_position = Vector2(0,0)  # Set this to your desired respawn location
-var heaven_mode = false
+var respawn_position = Vector2(0,0)  # Coordinates
+@export var heaven_mode = false
 var floating_velocity_y = 0.0
 
 # Reference to the "Play Again" button
-@onready var play_again_button = $CanvasLayer/PlayAgainButton  # Adjust path as necessary
+@onready var play_again_button = $CanvasLayer/PlayAgainButton
 
 func fade_screen_and_respawn():
 	$AnimationPlayer.play("fade")
@@ -15,7 +15,7 @@ func fade_screen_and_respawn():
 	$Player.set_physics_process(true)
 	$Player.get_node("AnimatedSprite2D").play("idle")
 
-# This function is connected to the body_exited signal from a kill zone
+# This function is connected to the body_exited signal from the kill zone
 func _on_void_kill_zone_body_exited(_body):
 	play_death_animation()
 	# Wait for x seconds using await
@@ -31,17 +31,17 @@ func play_death_animation():
 func _on_heaven_zone_body_entered(_body):
 	heaven_mode = true
 	floating_velocity_y = -20.0  # Initial upward velocity
-	$Player.set_physics_process(false)  # Optionally stop other processing
+	$Player.set_physics_process(false)  # Stop other processing
 	$Player.heaven_mode = true  # Set heaven mode in the player script
-	$Player.get_node("AnimatedSprite2D").play("float")  # Assuming you have a float animation
+	$Player.get_node("AnimatedSprite2D").play("float")
 	$Player.get_node("AudioStreamPlayer2D2").play()  # Play the heaven music
 	$Player.get_node("AnimationPlayer0").play("CloudFade")
 	fade_out_audio_stream_player2d()
 	trigger_fade_to_white()
 	stop_floating_after_delay()
 	await get_tree().create_timer(11).timeout
-	$Player.get_node("AnimationPlayer1").play("Credits")
-	await get_tree().create_timer(69).timeout  # Wait for the credits to finish
+	$Player.get_node("AnimationPlayer1").play("Credits") # Start the text, play again button and images after the white fade
+	await get_tree().create_timer(69).timeout
 	$AnimationPlayer.play("GameTitleIn")
 	await get_tree().create_timer(4.5).timeout
 	show_play_again_button()
@@ -55,12 +55,10 @@ func _on_heaven_zone_body_entered(_body):
 func _process(delta):
 	if heaven_mode:
 		floating_velocity_y *= 1.001  # Gradually increase the velocity
-		$Player.position.y += floating_velocity_y * delta  # Apply the velocity with delta
+		$Player.position.y += floating_velocity_y * delta  # Apply the velocity
 
 func trigger_fade_to_white():
 	await get_tree().create_timer(65.0).timeout  # Wait for x seconds
-	#$Fade2.modulate = Color(1, 1, 1, 0)  # Ensure the initial alpha is 0
-	#$Fade2.visible = true  # Make sure the Fade2 is visible
 	$AnimationPlayer.play("fade2")  # Play the fade to white animation
 
 func fade_out_audio_stream_player2d():
@@ -75,14 +73,13 @@ func fade_out_audio_stream_player2d():
 	$Player.get_node("AudioStreamPlayer2D").stop()
 
 func stop_floating_after_delay():
-	await get_tree().create_timer(80.0).timeout  # Wait for 80 seconds
+	await get_tree().create_timer(80.0).timeout  # Wait for x seconds
 	heaven_mode = false  # Disable heaven mode
 	floating_velocity_y = 0  # Stop the upward velocity
 
 func show_play_again_button():
 	play_again_button.visible = true
 	play_again_button.grab_focus()
-	# Optionally, play an animation to show the button
 	$AnimationPlayer.play("show_play_again_button")
 
 func fade_out_audio_stream_player2d2():

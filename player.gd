@@ -7,9 +7,6 @@ const JUMP_VELOCITY = -400.0
 const FRICTION = 3000  # Ground friction
 const AIR_RESISTANCE = 2000  # Air friction
 
-# Reference to the Fade node for screen transition effects
-@onready var fade = get_node("../Fade")  # Adjust path as necessary
-
 # Get the gravity from the project settings to be synced with RigidBody nodes
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -64,7 +61,9 @@ func _physics_process(delta):
 		direction += 1
 
 	var current_speed = SPEED
-	if Input.is_action_pressed("run"):
+	var is_running = Input.is_action_pressed("run")
+
+	if is_running:
 		current_speed *= RUN_SPEED_MULTIPLIER
 
 	if direction != 0:
@@ -73,7 +72,7 @@ func _physics_process(delta):
 
 		# Update animation and flip sprite based on movement direction
 		if is_on_floor():
-			if Input.is_action_pressed("run"):
+			if is_running:
 				$AnimatedSprite2D.animation = "run"
 			else:
 				$AnimatedSprite2D.animation = "walk"
@@ -84,8 +83,11 @@ func _physics_process(delta):
 		if is_on_floor():
 			velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
 			if velocity.x == 0:
-				$AnimatedSprite2D.animation = "idle"
+				if is_running:
+					$AnimatedSprite2D.animation = "prepare"
+				else:
+					$AnimatedSprite2D.animation = "idle"
 				$AnimatedSprite2D.play()
 
 	# Apply movement and physics to the player
-	move_and_slide()  # No parameters needed in Godot 4.0 for CharacterBody2D
+	move_and_slide() 
