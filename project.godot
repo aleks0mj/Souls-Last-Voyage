@@ -14,9 +14,12 @@ config/name="Soul's Last Voyage"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/fullsize=false
+config/icon="res://SLVicons/icon512x512.png"
+config/windows_native_icon="res://SLVicons/iconwithMagic.ico"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
