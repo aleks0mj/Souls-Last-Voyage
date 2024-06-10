@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ce8x416nwdvrl" path="res://FloatingIslands_Assets/ParalaxBackground/BackgroundGradient_Purple.png" id="5_vc4xg"]
 [ext_resource type="Texture2D" uid="uid://dekcb1va6drja" path="res://BG_DesertMountains/background2.png" id="6_4781e"]
 [ext_resource type="AudioStream" uid="uid://5qm4bd424kj1" path="res://fireflies-ambient-boy-main-version-13500-09-58.wav" id="7_2xibe"]
-[ext_resource type="Texture2D" uid="uid://d24wx2dwp5gmn" path="res://Minou ♡.png" id="8_vmu6p"]
+[ext_resource type="Texture2D" uid="uid://d3te07uwj5rih" path="res://Minou-h.png" id="8_vmu6p"]
 [ext_resource type="Texture2D" uid="uid://cy8momjc1l66y" path="res://BG_DesertMountains/cloud1.png" id="9_5dorp"]
 [ext_resource type="Texture2D" uid="uid://bp2hscjn2lcmn" path="res://BG_DesertMountains/cloud2.png" id="10_i2a5k"]
 [ext_resource type="Texture2D" uid="uid://drdww87ax5hjy" path="res://BG_DesertMountains/cloud3.png" id="11_0c2ko"]
@@ -434,7 +434,7 @@ position = Vector2(0, -13800)
 scale = Vector2(300, 50)
 shape = SubResource("RectangleShape2D_8yv8l")
 
-[node name="Minou♡" type="Sprite2D" parent="."]
+[node name="Minou-h" type="Sprite2D" parent="."]
 position = Vector2(1968, 1165)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("8_vmu6p")
