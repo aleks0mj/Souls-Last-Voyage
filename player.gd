@@ -16,19 +16,32 @@ var heaven_mode = false
 # Track the player's jump start position
 var jump_start_y = null
 
+# Reference to the AudioStreamPlayer2D node
 @onready var audio_player_1 = $AudioStreamPlayer2D
+var audio_duration = 598.0  # Duration in seconds (9 minutes and 58 seconds)
+var restart_time = 591.0  # 598 - 7 seconds
+var playback_timer = 0.0
 
 func _ready():
 	# Ensure the audio stream is set to loop
-	if audio_player_1.stream:
-		audio_player_1.stream.loop = true
+	audio_player_1.stream.loop = false
 	audio_player_1.play()
+	playback_timer = 0.0
+	set_process(true)
 
-func _physics_process(delta):
+func _process(delta):
 	# If in heaven mode, skip normal physics processing
 	if heaven_mode:
 		return
 
+	# Update the playback timer
+	playback_timer += delta
+
+	# Restart the audio player if it has 7 seconds remaining
+	if playback_timer >= restart_time:
+		audio_player_1.play()
+		playback_timer = 0.0
+	
 	# Add gravity to the player's vertical velocity
 	if not is_on_floor():
 		velocity.y += gravity * delta
