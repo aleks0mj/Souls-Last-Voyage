@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bg8dwvts3fb1m"]
+[gd_scene load_steps=47 format=3 uid="uid://bg8dwvts3fb1m"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_pkhuc"]
 [ext_resource type="PackedScene" uid="uid://mu4a4guwrqun" path="res://player.tscn" id="2_3vjp2"]
@@ -13,7 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://dceteu44snlv0" path="res://BG_DesertMountains/cloud4.png" id="12_l5hrb"]
 [ext_resource type="Texture2D" uid="uid://co7ndgk0g4mef" path="res://BG_DesertMountains/cloud5.png" id="13_u45nd"]
 [ext_resource type="Texture2D" uid="uid://dpnonmynt4tif" path="res://BG_DesertMountains/cloud7.png" id="15_7gsm8"]
+[ext_resource type="AudioStream" uid="uid://b24rge6saypew" path="res://fireflies-ambient-boy-main-version-13500-09-58.ogg" id="16_k6csm"]
 [ext_resource type="Texture2D" uid="uid://dast67bw8pibi" path="res://BG_DesertMountains/cloud8.png" id="16_vtun4"]
+[ext_resource type="AudioStream" uid="uid://d07k5x5ovew3b" path="res://hope-simon-folwar-main-version-02-44-8586.ogg" id="17_7pu5f"]
 [ext_resource type="FontFile" uid="uid://bdrsum6pf85vm" path="res://osaka-chips-font/OsakaChips-K7d0D.ttf" id="17_kvfq0"]
 [ext_resource type="Texture2D" uid="uid://bqd8biyqwij3o" path="res://MinouPics/minou1.jpg" id="17_sk58m"]
 [ext_resource type="Texture2D" uid="uid://jc28tfco53oy" path="res://MinouPics/minou2.png" id="18_6fva3"]
@@ -732,6 +734,16 @@ text = "In loving memory of Minou the cat
 text = "“Don't cry because it's over.
 Smile because it happened.”
 -Dr Seuss"
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="Player"]
+visible = false
+stream = ExtResource("16_k6csm")
+volume_db = 2.0
+autoplay = true
+
+[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("17_7pu5f")
+volume_db = 4.0
 
 [node name="Fade" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)

@@ -1,10 +1,12 @@
-[gd_scene load_steps=52 format=3 uid="uid://mu4a4guwrqun"]
+[gd_scene load_steps=54 format=3 uid="uid://mu4a4guwrqun"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_75nfh"]
 [ext_resource type="Texture2D" uid="uid://5pu82watfc13" path="res://AnimationSheet_Character.png" id="2_h2523"]
 [ext_resource type="Texture2D" uid="uid://cpj4foo85gce6" path="res://AnimationSheet_Character_custom.png" id="3_cw1hc"]
 [ext_resource type="FontFile" uid="uid://cxk0kpplhqvmb" path="res://sweety_rasty/Sweety Rasty.otf" id="4_ffvfd"]
 [ext_resource type="Texture2D" uid="uid://dceteu44snlv0" path="res://BG_DesertMountains/cloud4.png" id="4_vhfxy"]
+[ext_resource type="AudioStream" uid="uid://b24rge6saypew" path="res://fireflies-ambient-boy-main-version-13500-09-58.ogg" id="6_75q3q"]
+[ext_resource type="AudioStream" uid="uid://d07k5x5ovew3b" path="res://hope-simon-folwar-main-version-02-44-8586.ogg" id="7_ire5n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ftqby"]
 atlas = ExtResource("2_h2523")
@@ -691,3 +693,12 @@ text = "“Don't cry because it's over.
 Smile because it happened”
 -Dr Seuss"
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_75q3q")
+volume_db = 2.0
+autoplay = true
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ire5n")
+volume_db = 4.0
